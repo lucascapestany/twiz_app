@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <img src="rainbow.jpg" id="rainbow" width="800"/>
+    <script>
+      console.log('About to Fetch a Rainbow');
+
+      catchRainbow();
+
+      async function catchRainbow() {
+        const response = await fetch('rainbow.jpg')
+        const blob = await response.blob();
+        document.getElementById('rainbow').src = URL.createObjectURL(blob);
+      }
+    </script>
+  </body>
+</html>

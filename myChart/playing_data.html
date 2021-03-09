@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>1st Graph Data Boi</title>
+  </head>
+  <body>
+    <script>
+
+      getData();
+
+      async function getData() {
+        const response = await fetch('MOCK_DATA (1).csv');
+        const data = await response.text();
+
+        const table = data.split('\n').slice(1);
+        table.forEach(row => {
+          const columns = row.split(',');
+          const email = columns[0];
+          const company_location = columns[1];
+          console.log(email, company_location);
+        });
+      }
+    </script>
+  </body>
+</html>
